@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Profiler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="toggle-container">
+        <label>
+          <input type="checkbox" id="darkModeToggle">
+          Dark Mode
+        </label>
+    </div>
+
+    <h1>Most Profitable Stock Finder</h1>
+
+    <form method="POST">
+        <label>Start Date:</label>
+        <input type="date" name="start" required>
+        <br><br>
+        <label>End Date:</label>
+        <input type="date" name="end" required>
+        <br><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    <script>
+        const toggle = document.getElementById('darkModeToggle');
+        // On load, check localStorage
+        if (localStorage.getItem('darkMode') === 'enabled') {
+          document.documentElement.classList.add('dark-mode');
+          toggle.checked = true;
+        }
+        toggle.addEventListener('change', () => {
+          if (toggle.checked) {
+            document.documentElement.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+          } else {
+            document.documentElement.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+          }
+        });
+    </script>
+
+    {% if result %}
+        <h2>{{ result }}</h2>
+    {% endif %}
+</body>
+</html>

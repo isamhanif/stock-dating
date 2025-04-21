@@ -1,0 +1,93 @@
+:root {
+    /* Light theme colors */
+    --bg-color: #f2f2f2;
+    --text-color: #333;
+    --card-bg: white;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --button-bg: #1e90ff;
+    --button-hover: #0077e6;
+    --result-color: green;
+  }
+  
+  .dark-mode {
+    /* Dark theme overrides */
+    --bg-color: #121212;
+    --text-color: #eee;
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --button-bg: #bb86fc;
+    --button-hover: #985eff;
+    --result-color: #80ffea;
+  }
+  
+  body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding-top: 60px;
+  }
+  
+  h1 {
+      margin-bottom: 20px;
+  }
+  
+  form {
+      background-color: var(--card-bg);
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px var(--card-shadow);
+      display: inline-block;
+      text-align: left;
+  }
+  
+  label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+  }
+  
+  input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+  }
+  
+  button {
+      padding: 10px 20px;
+      background-color: var(--button-bg);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+  }
+  
+  button:hover {
+      background-color: var(--button-hover);
+  }
+  
+  h2 {
+      margin-top: 30px;
+      color: var(--result-color);
+  }
+  
+  /* Style the dark mode toggle switch */
+  .toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .toggle-container label {
+    cursor: pointer;
+    user-select: none;
+  }
+  
